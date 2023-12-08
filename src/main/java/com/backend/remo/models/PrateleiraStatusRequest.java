@@ -1,4 +1,4 @@
-package com.backend.remo.models.constants;
+package com.backend.remo.models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;

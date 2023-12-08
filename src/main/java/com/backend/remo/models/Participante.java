@@ -1,6 +1,5 @@
 package com.backend.remo.models;
 
-import com.backend.remo.models.usuario.Usuario;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

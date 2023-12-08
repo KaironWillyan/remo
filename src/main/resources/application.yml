@@ -1,9 +1,9 @@
 ##  Database  ##
 spring:
   datasource:
-    url: jdbc:postgresql://dpg-clp4capoh6hc73bsokkg-a/remo
+    url: jdbc:postgresql://dpg-clp6vm946foc73cdk5cg-a/remo_9tb4
     username: remo
-    password: HbBAs8cjJoPeqStbYAKj3BeoKVjcCsPV
+    password: d56ESQe9Wu0dzzEvP6JMqpuDragqR14E
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
@@ -16,10 +16,4 @@ spring:
         format_sql: true
     database: postgresql
 application:
-  security:
-    jwt:
-      secret-key: 404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970
-      expiration: 86400000 # a day
-      refresh-token:
-        expiration: 604800000 # 7 days
   port: 8090

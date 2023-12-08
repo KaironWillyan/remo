@@ -6,7 +6,7 @@ import com.backend.remo.Services.PrateleiraService;
 import com.backend.remo.models.Filme;
 import com.backend.remo.models.Prateleira;
 import com.backend.remo.models.PrateleiraFilme;
-import com.backend.remo.models.constants.PrateleiraStatusRequest;
+import com.backend.remo.models.PrateleiraStatusRequest;
 import com.backend.remo.repositories.PrateleiraFilmeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

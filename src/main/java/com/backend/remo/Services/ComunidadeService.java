@@ -2,11 +2,9 @@ package com.backend.remo.Services;
 
 import com.backend.remo.models.Comunidade;
 import com.backend.remo.models.Participante;
-import com.backend.remo.models.constants.Role;
-import com.backend.remo.models.usuario.Usuario;
+import com.backend.remo.models.Usuario;
 import com.backend.remo.repositories.ComunidadeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -34,7 +32,6 @@ public class ComunidadeService {
     public Comunidade createComunidade(Comunidade comunidade) {
         comunidadeRepository.save(comunidade);
         Usuario usuarioCriador = comunidade.getUsuario();
-        usuarioCriador.setRole(Role.MANAGER);
         Participante participanteCriador = Participante.builder()
                 .comunidade(comunidade)
                 .dataIngresso(comunidade.getDataCriacao())
