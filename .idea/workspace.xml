@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ac9461c7-c3e2-4062-9ab0-e00bb1fd140b" name="Changes" comment="Deploy" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Enum" />
+        <option value="Dockerfile" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="kairon &lt;kairon@kairon.kairon&gt;" />
+      </list>
+    </option>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="sprint-3-deploy" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;KaironWillyan&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="06e07ed2-5140-45b8-974d-e73b80084019" />
+        <option name="url" value="https://github.com/JoaoFilho33/remo.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="downloadAnnotationsAutomatically" value="true" />
+        <option name="downloadDocsAutomatically" value="true" />
+        <option name="downloadSourcesAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2Xh6E3yowh4aIEvbSNyWcVnUCsn" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "front-back",
+    "last_opened_file_path": "/home/kairon/Documents/remo/Dockerfile",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.16129032",
+    "settings.editor.selected.configurable": "settings.sync"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="com.backend.remo.config.auth" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.RemoApplication">
+    <configuration name="RemoApplication" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="com.backend.remo.RemoApplication" />
+      <module name="remo" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration>$USER_HOME$/.subversion</configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ac9461c7-c3e2-4062-9ab0-e00bb1fd140b" name="Changes" comment="" />
+      <created>1699068850769</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1699068850769</updated>
+    </task>
+    <task id="LOCAL-00001" summary="funcionando tudo">
+      <option name="closed" value="true" />
+      <created>1699215538077</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1699215538077</updated>
+    </task>
+    <task id="LOCAL-00002" summary="inicio auth">
+      <option name="closed" value="true" />
+      <created>1699920614556</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1699920614556</updated>
+    </task>
+    <task id="LOCAL-00003" summary="inicio auth">
+      <option name="closed" value="true" />
+      <created>1700523632170</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1700523632170</updated>
+    </task>
+    <task id="LOCAL-00004" summary="novos endpoints">
+      <option name="closed" value="true" />
+      <created>1700533487569</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1700533487569</updated>
+    </task>
+    <task id="LOCAL-00005" summary="novos endpoints">
+      <option name="closed" value="true" />
+      <created>1701808297441</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1701808297441</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Funcionando jwt">
+      <option name="closed" value="true" />
+      <created>1701918989264</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1701918989264</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Deploy">
+      <option name="closed" value="true" />
+      <created>1701921456051</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1701921456051</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Deploy">
+      <option name="closed" value="true" />
+      <created>1701923290375</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1701923290375</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Deploy">
+      <option name="closed" value="true" />
+      <created>1701990548918</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1701990548918</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Deploy">
+      <option name="closed" value="true" />
+      <created>1701991241531</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1701991241531</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Deploy">
+      <option name="closed" value="true" />
+      <created>1701991620525</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1701991620525</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Deploy">
+      <option name="closed" value="true" />
+      <created>1701991853232</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1701991853232</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Deploy">
+      <option name="closed" value="true" />
+      <created>1701992003547</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1701992003547</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Deploy">
+      <option name="closed" value="true" />
+      <created>1701992045921</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1701992045921</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Deploy">
+      <option name="closed" value="true" />
+      <created>1701992295161</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1701992295161</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Deploy">
+      <option name="closed" value="true" />
+      <created>1701992332556</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1701992332556</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Deploy">
+      <option name="closed" value="true" />
+      <created>1701993344476</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1701993344476</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Deploy">
+      <option name="closed" value="true" />
+      <created>1701995325620</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1701995325620</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Deploy">
+      <option name="closed" value="true" />
+      <created>1701996900149</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1701996900149</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Deploy">
+      <option name="closed" value="true" />
+      <created>1701997011833</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1701997011833</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Deploy">
+      <option name="closed" value="true" />
+      <created>1701998852960</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1701998852960</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
+    <servers />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="dependencySupport" implementationName="executable:docker" />
+    <option featureType="dependencySupport" implementationName="executable:podman" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="funcionando tudo" />
+    <MESSAGE value="inicio auth" />
+    <MESSAGE value="novos endpoints" />
+    <MESSAGE value="Funcionando jwt" />
+    <MESSAGE value="Deploy" />
+    <option name="LAST_COMMIT_MESSAGE" value="Deploy" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.IllegalArgumentException" package="java.lang" />
+          <option name="timeStamp" value="2" />
+        </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="org.hibernate.query.UnknownParameterException" package="org.hibernate.query" />
+          <option name="timeStamp" value="3" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

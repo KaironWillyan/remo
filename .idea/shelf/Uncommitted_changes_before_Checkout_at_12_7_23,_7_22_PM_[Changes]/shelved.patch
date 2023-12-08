@@ -1,0 +1,17 @@
+Index: ProjRemo/src/pages/Pesquisar/index.tsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import fetch from \"node-fetch\";\nimport { useState, ChangeEvent } from \"react\";\n\ninterface Collection {\n  id: number;\n  name: string;\n}\n\nexport function Pesquisar() {\n  const [query, setQuery] = useState<string>(\"\");\n  const [results, setResults] = useState<Collection[]>([]);\n\n  const handleSearch = async () => {\n    const url = `https://api.themoviedb.org/3/search/collection?query=${query}&include_adult=true&language=en-US&page=1`;\n    const options = {\n      method: \"GET\",\n      headers: {\n        accept: \"application/json\",\n        Authorization: \"Bearer YOUR_API_KEY\",\n      },\n    };\n\n    try {\n      const response = await fetch(url, options);\n      const json = await response.json();\n      setResults(json.results);\n    } catch (error) {\n      console.error(\"Error:\", error);\n    }\n  };\n  return (\n    <div>\n      <input\n        type=\"text\"\n        value={query}\n        onChange={(e: ChangeEvent<HTMLInputElement>) =>\n          setQuery(e.target.value)\n        }\n      />\n      <button onClick={handleSearch}>Search</button>\n\n      <ul>\n        {results.map((result) => (\n          <li key={result.id}>{result.name}</li>\n        ))}\n      </ul>\n    </div>\n  );\n}\n
+===================================================================
+diff --git a/ProjRemo/src/pages/Pesquisar/index.tsx b/ProjRemo/src/pages/Pesquisar/index.tsx
+--- a/ProjRemo/src/pages/Pesquisar/index.tsx	
++++ b/ProjRemo/src/pages/Pesquisar/index.tsx	
+@@ -16,7 +16,7 @@
+       method: "GET",
+       headers: {
+         accept: "application/json",
+-        Authorization: "Bearer YOUR_API_KEY",
++        Authorization: "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlNmUyNjU4NzQ4ODgyM2U0YzVlZDcxMWU0MTI2NjMwYSIsInN1YiI6IjY1NzE0MjE5YTIyZDNlMDBlMTFiOTJhMSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.gmBeSMERRGZKpSk4_aq1UuoV1U8LahLddnKCU_HQYrg",
+       },
+     };
+ 

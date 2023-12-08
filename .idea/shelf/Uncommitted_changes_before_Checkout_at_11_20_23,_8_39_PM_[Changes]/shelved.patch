@@ -1,0 +1,307 @@
+Index: pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project xmlns=\"http://maven.apache.org/POM/4.0.0\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n\txsi:schemaLocation=\"http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd\">\n\t<modelVersion>4.0.0</modelVersion>\n\t<parent>\n\t\t<groupId>org.springframework.boot</groupId>\n\t\t<artifactId>spring-boot-starter-parent</artifactId>\n\t\t<version>3.1.5</version>\n\t\t<relativePath/> <!-- lookup parent from repository -->\n\t</parent>\n\t<groupId>com.backend</groupId>\n\t<artifactId>remo</artifactId>\n\t<version>0.0.1-SNAPSHOT</version>\n\t<name>remo</name>\n\t<description>Remo project </description>\n\t<properties>\n\t\t<java.version>17</java.version>\n\t</properties>\n\t<dependencies>\n\t\t<dependency>\n\t\t\t<groupId>org.springframework.boot</groupId>\n\t\t\t<artifactId>spring-boot-starter-data-jpa</artifactId>\n\t\t</dependency>\n\t\t<dependency>\n\t\t\t<groupId>org.springframework.boot</groupId>\n\t\t\t<artifactId>spring-boot-devtools</artifactId>\n\t\t\t<scope>runtime</scope>\n\t\t\t<optional>true</optional>\n\t\t</dependency>\n\t\t<dependency>\n\t\t\t<groupId>org.postgresql</groupId>\n\t\t\t<artifactId>postgresql</artifactId>\n\t\t\t<scope>runtime</scope>\n\t\t</dependency>\n\t\t<dependency>\n\t\t\t<groupId>org.projectlombok</groupId>\n\t\t\t<artifactId>lombok</artifactId>\n\t\t\t<optional>true</optional>\n\t\t</dependency>\n\t\t<dependency>\n\t\t\t<groupId>org.springframework.boot</groupId>\n\t\t\t<artifactId>spring-boot-starter-test</artifactId>\n\t\t\t<scope>test</scope>\n\t\t</dependency>\n\t\t<!--security-->\n\t\t<dependency>\n\t\t\t<groupId>org.springframework.boot</groupId>\n\t\t\t<artifactId>spring-boot-starter-security</artifactId>\n\t\t</dependency>\n\t\t<dependency>\n\t\t\t<groupId>org.springframework.boot</groupId>\n\t\t\t<artifactId>spring-boot-starter-oauth2-resource-server</artifactId>\n\t\t</dependency>\n\t\t<dependency>\n\t\t\t<groupId>org.keycloak</groupId>\n\t\t\t<artifactId>keycloak-policy-enforcer</artifactId>\n\t\t\t<version>22.0.5</version>\n\t\t</dependency>\n\t\t<dependency>\n\t\t\t<groupId>org.keycloak</groupId>\n\t\t\t<artifactId>keycloak-core</artifactId>\n\t\t\t<version>22.0.5</version>\n\t\t</dependency>\n\t\t<dependency>\n\t\t\t<groupId>org.keycloak</groupId>\n\t\t\t<artifactId>keycloak-spring-security-adapter</artifactId>\n\t\t\t<version>22.0.5</version>\n\t\t</dependency>\n\t</dependencies>\n\n\t<build>\n\t\t<plugins>\n\t\t\t<plugin>\n\t\t\t\t<groupId>org.springframework.boot</groupId>\n\t\t\t\t<artifactId>spring-boot-maven-plugin</artifactId>\n\t\t\t\t<configuration>\n\t\t\t\t\t<excludes>\n\t\t\t\t\t\t<exclude>\n\t\t\t\t\t\t\t<groupId>org.projectlombok</groupId>\n\t\t\t\t\t\t\t<artifactId>lombok</artifactId>\n\t\t\t\t\t\t</exclude>\n\t\t\t\t\t</excludes>\n\t\t\t\t</configuration>\n\t\t\t</plugin>\n\t\t</plugins>\n\t</build>\n\n</project>\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/pom.xml b/pom.xml
+--- a/pom.xml	
++++ b/pom.xml	
+@@ -42,6 +42,11 @@
+ 			<artifactId>spring-boot-starter-test</artifactId>
+ 			<scope>test</scope>
+ 		</dependency>
++		<dependency>
++			<groupId>org.springframework.security</groupId>
++			<artifactId>spring-security-test</artifactId>
++			<scope>test</scope>
++		</dependency>
+ 		<!--security-->
+ 		<dependency>
+ 			<groupId>org.springframework.boot</groupId>
+@@ -49,22 +54,11 @@
+ 		</dependency>
+ 		<dependency>
+ 			<groupId>org.springframework.boot</groupId>
+-			<artifactId>spring-boot-starter-oauth2-resource-server</artifactId>
++			<artifactId>spring-boot-starter-web</artifactId>
+ 		</dependency>
+ 		<dependency>
+-			<groupId>org.keycloak</groupId>
+-			<artifactId>keycloak-policy-enforcer</artifactId>
+-			<version>22.0.5</version>
+-		</dependency>
+-		<dependency>
+-			<groupId>org.keycloak</groupId>
+-			<artifactId>keycloak-core</artifactId>
+-			<version>22.0.5</version>
+-		</dependency>
+-		<dependency>
+-			<groupId>org.keycloak</groupId>
+-			<artifactId>keycloak-spring-security-adapter</artifactId>
+-			<version>22.0.5</version>
++			<groupId>org.springframework.boot</groupId>
++			<artifactId>spring-boot-starter-oauth2-resource-server</artifactId>
+ 		</dependency>
+ 	</dependencies>
+ 
+Index: src/main/java/com/backend/remo/security/JWTConverter.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/backend/remo/security/JWTConverter.java b/src/main/java/com/backend/remo/security/JWTConverter.java
+new file mode 100644
+--- /dev/null	
++++ b/src/main/java/com/backend/remo/security/JWTConverter.java	
+@@ -0,0 +1,26 @@
++package com.backend.remo.security;
++
++import org.springframework.core.convert.converter.Converter;
++import org.springframework.security.authentication.AbstractAuthenticationToken;
++import org.springframework.security.core.authority.SimpleGrantedAuthority;
++import org.springframework.security.oauth2.jwt.Jwt;
++import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationToken;
++
++import java.util.Collection;
++import java.util.Map;
++
++public class JWTConverter implements Converter<Jwt, AbstractAuthenticationToken> {
++    @Override
++    public AbstractAuthenticationToken convert(Jwt jwt) {
++
++        Map<String, Collection<String>> realmAccess = jwt.getClaim("realm_access");
++        Collection<String> roles = realmAccess.get("roles");
++        var grants = roles
++                .stream()
++                .map(role -> new SimpleGrantedAuthority("ROLE_"+ role)).toList();
++
++
++        return new JwtAuthenticationToken(jwt, grants);
++    }
++
++}
+Index: src/main/java/com/backend/remo/auth/TokenController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/backend/remo/auth/TokenController.java b/src/main/java/com/backend/remo/auth/TokenController.java
+new file mode 100644
+--- /dev/null	
++++ b/src/main/java/com/backend/remo/auth/TokenController.java	
+@@ -0,0 +1,39 @@
++package com.backend.remo.auth;
++
++import org.springframework.http.HttpEntity;
++import org.springframework.http.HttpHeaders;
++import org.springframework.http.MediaType;
++import org.springframework.http.ResponseEntity;
++import org.springframework.util.LinkedMultiValueMap;
++import org.springframework.util.MultiValueMap;
++import org.springframework.web.bind.annotation.PostMapping;
++import org.springframework.web.bind.annotation.RequestBody;
++import org.springframework.web.bind.annotation.RequestMapping;
++import org.springframework.web.bind.annotation.RestController;
++import org.springframework.web.client.RestTemplate;
++
++@RestController
++@RequestMapping("/token")
++public class TokenController {
++
++    @PostMapping("/")
++    public ResponseEntity<String> token(@RequestBody User user){
++        HttpHeaders headers = new HttpHeaders();
++        RestTemplate restTemplate = new RestTemplate();
++        headers.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
++
++        MultiValueMap<String, String> formData = new LinkedMultiValueMap<>();
++        formData.add("client_id", user.clientId);
++        formData.add("username", user.username);
++        formData.add("password", user.password);
++        formData.add("grant_type", user.grantType);
++        formData.add("client_secret", user.clientSecret);
++
++
++        HttpEntity<MultiValueMap<String, String>> entity
++                = new HttpEntity<MultiValueMap<String,String>>(formData, headers);
++
++        return restTemplate.postForEntity("http://localhost:8090/auth/realms/remo/protocol/openid-connect/token", entity, String.class);
++    }
++    public record User(String clientId, String username, String password, String grantType, String clientSecret){}
++}
+Index: src/main/java/com/backend/remo/controllers/WikiController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.backend.remo.controllers;\n\n\nimport com.backend.remo.Services.WikiService;\nimport com.backend.remo.models.Usuario;\nimport com.backend.remo.models.Wiki;\nimport org.springframework.beans.factory.annotation.Autowired;\nimport org.springframework.http.ResponseEntity;\nimport org.springframework.validation.annotation.Validated;\nimport org.springframework.web.bind.annotation.*;\n\nimport java.util.List;\n\n@RestController\n@RequestMapping(\"/wiki\")\npublic class WikiController {\n    @Autowired\n    private WikiService wikiService;\n\n    @GetMapping\n    public ResponseEntity<List<Wiki>> getWikis(){\n        return ResponseEntity.ok((List<Wiki>) wikiService.getAllWikis());\n    }\n\n    @PostMapping\n    public Wiki postWiki(@Validated @RequestBody Wiki wiki){\n        return wikiService.createWiki(wiki  );\n    }\n\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/backend/remo/controllers/WikiController.java b/src/main/java/com/backend/remo/controllers/WikiController.java
+--- a/src/main/java/com/backend/remo/controllers/WikiController.java	
++++ b/src/main/java/com/backend/remo/controllers/WikiController.java	
+@@ -27,4 +27,5 @@
+         return wikiService.createWiki(wiki  );
+     }
+ 
++
+ }
+Index: src/main/resources/application.yml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>##  Database  ##\nspring:\n  datasource:\n    url: jdbc:postgresql://localhost:5432/remo\n    username: remo\n    password: 1234\n    driver-class-name: org.postgresql.Driver\n  jpa:\n    hibernate:\n      ddl-auto: update\n      jdbc.lob.non_contextual_creation: true\n    gerenate-ddl: true\n    show-sql: true\n    properties:\n      hibernate:\n        format_sql: true\n    database: postgresql\n    database-platform: org.hibernate.dialect.PostgreSQLDialect\n  security:\n    security:\n      oauth2:\n        resourceserver:\n          jwt:\n            issuer-uri: http://localhost:8090/realms/remo\n            jwk-set-uri: http://localhost:8090/realms/remo/protocol/openid-connect/certs\n        client:\n          registration:\n            keycloak:\n              realm: remo\n              client-id: login-app\n              authorization-grant-type: authorization_code\n              scope: openid,offline_access,profile\n              client-secret: PEjwGKT58fqbNs5gSS0PUj93MV4B0xq8\n          provider:\n            keycloak:\n              issuer-uri: http://localhost:8090/realms/remo\n              user-name-attribute: preferred_username
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/application.yml b/src/main/resources/application.yml
+--- a/src/main/resources/application.yml	
++++ b/src/main/resources/application.yml	
+@@ -21,17 +21,17 @@
+       oauth2:
+         resourceserver:
+           jwt:
+-            issuer-uri: http://localhost:8090/realms/remo
+-            jwk-set-uri: http://localhost:8090/realms/remo/protocol/openid-connect/certs
+-        client:
+-          registration:
+-            keycloak:
+-              realm: remo
+-              client-id: login-app
+-              authorization-grant-type: authorization_code
+-              scope: openid,offline_access,profile
+-              client-secret: PEjwGKT58fqbNs5gSS0PUj93MV4B0xq8
+-          provider:
+-            keycloak:
+-              issuer-uri: http://localhost:8090/realms/remo
+-              user-name-attribute: preferred_username
+\ No newline at end of file
++            issuer-uri: http://localhost:8090/auth/realms/remo
++            jwk-set-uri: http://localhost:8090/auth/realms/remo/protocol/openid-connect/certs
++#        client:
++#          registration:
++#            keycloak:
++#              realm: remo
++#              client-id: login-app
++#              authorization-grant-type: authorization_code
++#              scope: openid,offline_access,profile
++#              client-secret: PEjwGKT58fqbNs5gSS0PUj93MV4B0xq8
++#          provider:
++#            keycloak:
++#              issuer-uri: http://localhost:8090/auth/realms/remo
++#              user-name-attribute: preferred_username
+\ No newline at end of file
+Index: src/main/java/com/backend/remo/controllers/TesteController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/backend/remo/controllers/TesteController.java b/src/main/java/com/backend/remo/controllers/TesteController.java
+new file mode 100644
+--- /dev/null	
++++ b/src/main/java/com/backend/remo/controllers/TesteController.java	
+@@ -0,0 +1,23 @@
++package com.backend.remo.controllers;
++
++import org.springframework.security.access.prepost.PreAuthorize;
++import org.springframework.web.bind.annotation.GetMapping;
++import org.springframework.web.bind.annotation.PostMapping;
++import org.springframework.web.bind.annotation.RequestMapping;
++import org.springframework.web.bind.annotation.RestController;
++
++@RestController
++@RequestMapping("/teste")
++public class TesteController {
++    @GetMapping("/")
++    @PreAuthorize("hasRole('USER')")
++    public String list() {
++        return "Listando produtos";
++    }
++
++    @PostMapping("/")
++    @PreAuthorize("hasRole('ADMIN')")
++    public String create() {
++        return "Cadastrando produtos";
++    }
++}
+Index: src/main/java/com/backend/remo/security/SecurityConfig.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.backend.remo.security;\n\nimport org.keycloak.adapters.authorization.integration.jakarta.ServletPolicyEnforcerFilter;\nimport org.keycloak.adapters.authorization.spi.ConfigurationResolver;\nimport org.keycloak.adapters.authorization.spi.HttpRequest;\nimport org.keycloak.adapters.springsecurity.KeycloakConfiguration;\nimport org.keycloak.representations.adapters.config.PolicyEnforcerConfig;\nimport org.keycloak.util.JsonSerialization;\nimport org.springframework.beans.factory.annotation.Value;\nimport org.springframework.context.annotation.Bean;\nimport org.springframework.context.annotation.Configuration;\nimport org.springframework.security.config.Customizer;\nimport org.springframework.security.config.annotation.web.builders.HttpSecurity;\nimport org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;\nimport org.springframework.security.oauth2.jwt.JwtDecoder;\nimport org.springframework.security.oauth2.jwt.NimbusJwtDecoder;\nimport org.springframework.security.oauth2.server.resource.web.authentication.BearerTokenAuthenticationFilter;\nimport org.springframework.security.web.SecurityFilterChain;\n\nimport java.io.IOException;\n\n@EnableWebSecurity\n@Configuration\npublic class SecurityConfig {\n\n    String jwkSetUri = \"http://localhost:8090/realms/remo/protocol/openid-connect/certs\";\n    @Bean\n    public SecurityFilterChain configure(HttpSecurity http) throws Exception{\n       /* http\n                .oauth2Client(Customizer.withDefaults())\n                .oauth2Login(Customizer.withDefaults())\n                .logout( lo -> lo.logoutSuccessUrl(\"http://localhost:8090/realms/remo/protocol/openid-connect/logout\"));*/\n        http\n                .authorizeHttpRequests((authorize) -> authorize\n                        .requestMatchers( \"/oauth2/**\", \"/login/**\").permitAll()\n                        .anyRequest().authenticated()\n                )\n                .oauth2ResourceServer((oauth2) -> oauth2.jwt(Customizer.withDefaults()))\n                .addFilterAfter(createPolicyEnforcerFilter(), BearerTokenAuthenticationFilter.class);\n        return http.build();\n    }\n\n    public ServletPolicyEnforcerFilter createPolicyEnforcerFilter(){\n        return new ServletPolicyEnforcerFilter(new ConfigurationResolver() {\n            @Override\n            public PolicyEnforcerConfig resolve(HttpRequest httpRequest) {\n                try{\n                    return JsonSerialization.readValue(getClass().getResourceAsStream(\"/policy-enforcer.json\"), PolicyEnforcerConfig.class);\n                }catch (IOException e){\n                    throw new RuntimeException(e);\n                }\n            }\n        });\n    }\n\n    @Bean\n    JwtDecoder jwtDecoder(){\n        return NimbusJwtDecoder.withJwkSetUri(this.jwkSetUri).build();\n    }\n\n}\n
+===================================================================
+diff --git a/src/main/java/com/backend/remo/security/SecurityConfig.java b/src/main/java/com/backend/remo/security/SecurityConfig.java
+--- a/src/main/java/com/backend/remo/security/SecurityConfig.java	
++++ b/src/main/java/com/backend/remo/security/SecurityConfig.java	
+@@ -1,61 +1,29 @@
+ package com.backend.remo.security;
+ 
+-import org.keycloak.adapters.authorization.integration.jakarta.ServletPolicyEnforcerFilter;
+-import org.keycloak.adapters.authorization.spi.ConfigurationResolver;
+-import org.keycloak.adapters.authorization.spi.HttpRequest;
+-import org.keycloak.adapters.springsecurity.KeycloakConfiguration;
+-import org.keycloak.representations.adapters.config.PolicyEnforcerConfig;
+-import org.keycloak.util.JsonSerialization;
+-import org.springframework.beans.factory.annotation.Value;
+ import org.springframework.context.annotation.Bean;
+ import org.springframework.context.annotation.Configuration;
+-import org.springframework.security.config.Customizer;
++import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
+ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+ import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+-import org.springframework.security.oauth2.jwt.JwtDecoder;
+-import org.springframework.security.oauth2.jwt.NimbusJwtDecoder;
+-import org.springframework.security.oauth2.server.resource.web.authentication.BearerTokenAuthenticationFilter;
+ import org.springframework.security.web.SecurityFilterChain;
+ 
+-import java.io.IOException;
+-
+-@EnableWebSecurity
+ @Configuration
++@EnableWebSecurity
++@EnableMethodSecurity
+ public class SecurityConfig {
+ 
+-    String jwkSetUri = "http://localhost:8090/realms/remo/protocol/openid-connect/certs";
+     @Bean
+-    public SecurityFilterChain configure(HttpSecurity http) throws Exception{
+-       /* http
+-                .oauth2Client(Customizer.withDefaults())
+-                .oauth2Login(Customizer.withDefaults())
+-                .logout( lo -> lo.logoutSuccessUrl("http://localhost:8090/realms/remo/protocol/openid-connect/logout"));*/
++    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{
+         http
+-                .authorizeHttpRequests((authorize) -> authorize
+-                        .requestMatchers( "/oauth2/**", "/login/**").permitAll()
+-                        .anyRequest().authenticated()
+-                )
+-                .oauth2ResourceServer((oauth2) -> oauth2.jwt(Customizer.withDefaults()))
+-                .addFilterAfter(createPolicyEnforcerFilter(), BearerTokenAuthenticationFilter.class);
++                .csrf(csrf -> csrf.disable())
++                .oauth2ResourceServer(oauth2 -> oauth2
++                        .jwt(jwt -> jwt.jwtAuthenticationConverter(jwtConverter())));
++
+         return http.build();
+     }
+ 
+-    public ServletPolicyEnforcerFilter createPolicyEnforcerFilter(){
+-        return new ServletPolicyEnforcerFilter(new ConfigurationResolver() {
+-            @Override
+-            public PolicyEnforcerConfig resolve(HttpRequest httpRequest) {
+-                try{
+-                    return JsonSerialization.readValue(getClass().getResourceAsStream("/policy-enforcer.json"), PolicyEnforcerConfig.class);
+-                }catch (IOException e){
+-                    throw new RuntimeException(e);
+-                }
+-            }
+-        });
+-    }
++}
+ 
+-    @Bean
+-    JwtDecoder jwtDecoder(){
+-        return NimbusJwtDecoder.withJwkSetUri(this.jwkSetUri).build();
+-    }
++
+ 
+-}
++
